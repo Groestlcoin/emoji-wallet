@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bitcoin emoji wallet</title>
+	<title>Groestlcoin emoji wallet</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,16 +17,16 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<a href="https://github.com/stepansnigirev/emoji-wallet"><img src="fork_me.png" id="forkme"></a>
+	<a href="https://github.com/groestlcoin/emoji-wallet"><img src="fork_me.png" id="forkme"></a>
 	<main>
 
-		<h1>Emoji Bitcoin wallet</h1>
+		<h1>Emoji Groestlcoin wallet</h1>
 
 		<p>
 			Tired of boring 12-word seeds? Use emoji instead! The same security 🔑 in a funny form 😻!
 		</p>
 		<div class="warning" role="alert">
-			<b>⚠️ Warning:</b> using emoji seed is not very safe as there are plenty of similar emojis (for example 💀 and ☠️) and they are platform-dependent. But you still can do it if you want 😈.
+			<b>⚠️ Warning:</b> using emoji seed is not very safe as there are plenty of similar emojis (for example 💀 and ☠️) and they are platform-dependent.
 		</div>
 
 		<h2>Your emoji seed:</h2>
@@ -34,7 +34,7 @@
 			Refresh this page to get a new seed.
 		</p>
 		<p class="note" style="text-align: justify;">
-			To detect typos we use a wordlist-independent electrum checksum approach: Emoji seed generator creates sequences of random emojis and checks if their HMAC starts with "01" (electrum standard seed). With this type of checksum even using a different list of emojis will lead to a valid seed, and if you've made a typo when entering the seed first two characters of the HMAC will be different from "01", so you will know that you made a typo.
+			To detect typos we use a wordlist-independent electrum-grs checksum approach: Emoji seed generator creates sequences of random emojis and checks if their HMAC starts with "01" (electrum-grs standard seed). With this type of checksum even using a different list of emojis will lead to a valid seed, and if you've made a typo when entering the seed first two characters of the HMAC will be different from "01", so you will know that you made a typo.
 		</p>
 		<input type="text" id="seed"/>
 
@@ -45,11 +45,11 @@
 		<div class="wrap" id="hmac">&nbsp;<br>&nbsp;</div>
 
 		<h2>Your master private key:</h2>
-		<p class="note">You can import it to any wallet. Derived the same way as in electrum wallet.</p>
+		<p class="note">You can import it to any wallet. Derived the same way as in electrum-grs wallet.</p>
 		<div class="wrap" id="xprv">&nbsp;<br>&nbsp;</div>
 
 		<h2>Your master public key:</h2>
-		<p class="note">You can import it to any wallet to watch your funds. Derived the same way as in electrum wallet.</p>
+		<p class="note">You can import it to any wallet to watch your funds. Derived the same way as in electrum-grs wallet.</p>
 		<div class="wrap" id="xpub">&nbsp;<br>&nbsp;</div>
 
 		<h2>Current emojis wordlist</h2>
@@ -59,13 +59,14 @@
 
 		<h2>Contribute</h2>
 		<p>
-			Fork me on <a href="https://github.com/stepansnigirev/emoji-wallet">GitHub</a>
+			Fork me on <a href="https://github.com/groestlcoin/emoji-wallet">GitHub</a>
 		</p>
 
 	</main>
 	<br><br>
 
 	<script src="libs/bitcoinjs.min.js"></script>
+	<script src="libs/grs.js"></script>
 	<script src="emoji.js"></script>
 </body>
 </html>
